@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de Red · PokeMMO</title>
+<script>try{var t=localStorage.getItem("guiaRedTheme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>:root{--bg:#150b08;--glow:#5a1f0a;--mid:#2a0f08;--card:#241613;--card2:#1a0f0c;--line:#3a2620;--accent:#ff7a1a;--accent2:#ffc23d;--grad-a:#ffa23a;--grad-b:#ff6a14;--on-accent:#2a0f08;--text:#f4e9e4;--muted:#b8a39a;--info:#38bdf8;--info-bg:#0d2230;--info-line:#17506b;--danger:#ff5a3c;--fin-bg:#2a1609;--fin-head:#3a1c08;--fin-line:#5a2f10;--end-bg:#3a1c08;--end-line:#6a3510;--banner-a:#8a2a0c;--banner-b:#5a1a0a;--banner-text:#ffd9a8;--chip-bg:#0f2a3a;--chip-line:#17506b;--chip-text:#7dd3fc;--hover:#2f1b15}
+[data-theme="oceano"]{--bg:#06121c;--glow:#0b4a6e;--mid:#08233a;--card:#0f2536;--card2:#0a1a28;--line:#1e3b52;--accent:#22b8e8;--accent2:#7fe0ff;--grad-a:#38c8f5;--grad-b:#0a86c4;--on-accent:#03131d;--text:#e6f4fb;--muted:#8fb0c4;--info:#7dd3fc;--info-bg:#0a2a3d;--info-line:#1c6a8c;--danger:#ff7a59;--fin-bg:#0c2233;--fin-head:#123552;--fin-line:#1e4a6b;--end-bg:#0f3050;--end-line:#1f5f8a;--banner-a:#0b5c8a;--banner-b:#083a5c;--banner-text:#cdeeff;--chip-bg:#0b2a3a;--chip-line:#1c6a8c;--chip-text:#9fe3ff;--hover:#153248}
+[data-theme="bosque"]{--bg:#08130b;--glow:#1f5a22;--mid:#0f2a14;--card:#14261a;--card2:#0d1c12;--line:#27402c;--accent:#4ade80;--accent2:#bef264;--grad-a:#6ee79a;--grad-b:#22a755;--on-accent:#06210f;--text:#e9f5ec;--muted:#9db8a4;--info:#fcd34d;--info-bg:#2a2508;--info-line:#6b5a14;--danger:#ff7a59;--fin-bg:#12301a;--fin-head:#1a4425;--fin-line:#2b6a3a;--end-bg:#17401f;--end-line:#2f7a43;--banner-a:#2a7a35;--banner-b:#17501f;--banner-text:#d9ffd9;--chip-bg:#0f2a1a;--chip-line:#2b6a3a;--chip-text:#86efac;--hover:#1d3626}
+[data-theme="noche"]{--bg:#0d0a18;--glow:#4a2a8a;--mid:#1a1033;--card:#1d1630;--card2:#140f24;--line:#352a52;--accent:#a78bfa;--accent2:#e0b3ff;--grad-a:#c4adff;--grad-b:#9a6bf0;--on-accent:#150b2e;--text:#f0eaff;--muted:#a99dc4;--info:#7dd3fc;--info-bg:#0f1f38;--info-line:#1f4b7a;--danger:#ff7a9c;--fin-bg:#221640;--fin-head:#2e1e56;--fin-line:#4a3590;--end-bg:#2a1c52;--end-line:#5a44a8;--banner-a:#5b30b8;--banner-b:#3a1f7a;--banner-text:#e6d9ff;--chip-bg:#1a1440;--chip-line:#4a3590;--chip-text:#c4b5fd;--hover:#2a2142}
+[data-theme="electrico"]{--bg:#0c0c08;--glow:#5a5208;--mid:#1a1806;--card:#1e1d10;--card2:#14130a;--line:#3a3716;--accent:#facc15;--accent2:#fff176;--grad-a:#ffe14a;--grad-b:#f0a800;--on-accent:#1c1700;--text:#fbf8e4;--muted:#bdb78d;--info:#7dd3fc;--info-bg:#0d2230;--info-line:#17506b;--danger:#ff6b4a;--fin-bg:#262208;--fin-head:#3a3308;--fin-line:#6b5f10;--end-bg:#3a3308;--end-line:#7a6c12;--banner-a:#8a7208;--banner-b:#5a4a05;--banner-text:#fff3b0;--chip-bg:#0f2a3a;--chip-line:#17506b;--chip-text:#7dd3fc;--hover:#2a2810}
+[data-theme="rosa"]{--bg:#1a0d14;--glow:#8a2a5a;--mid:#2e1022;--card:#2a1520;--card2:#1f0f18;--line:#4a2638;--accent:#ff7eb6;--accent2:#ffc2dd;--grad-a:#ff9ac8;--grad-b:#e0457f;--on-accent:#2a0716;--text:#fbe9f1;--muted:#c9a0b4;--info:#7dd3fc;--info-bg:#0d2230;--info-line:#17506b;--danger:#ff6b8a;--fin-bg:#331626;--fin-head:#4a1c35;--fin-line:#7a2f55;--end-bg:#4a1c35;--end-line:#8a3a63;--banner-a:#b83a78;--banner-b:#7a2250;--banner-text:#ffe0ef;--chip-bg:#1a2440;--chip-line:#2f4a8a;--chip-text:#a5c8ff;--hover:#3a1d2c}
+[data-theme="grafito"]{--bg:#0e0f11;--glow:#2a2d33;--mid:#16181b;--card:#1c1f23;--card2:#131518;--line:#2c3036;--accent:#2dd4bf;--accent2:#99f6e4;--grad-a:#5eead4;--grad-b:#14b8a6;--on-accent:#04201c;--text:#eceff3;--muted:#9aa3ae;--info:#7dd3fc;--info-bg:#0d2230;--info-line:#17506b;--danger:#fb7185;--fin-bg:#17201f;--fin-head:#1f2e2c;--fin-line:#2f4a46;--end-bg:#1f2e2c;--end-line:#3a5e58;--banner-a:#1f6b62;--banner-b:#134842;--banner-text:#c9fff6;--chip-bg:#0f2a3a;--chip-line:#17506b;--chip-text:#7dd3fc;--hover:#262a30}
+[data-theme="claro"]{--bg:#fdf6ef;--glow:#ffd9b0;--mid:#fff0e0;--card:#ffffff;--card2:#fff8f0;--line:#e8d5c4;--accent:#c2410c;--accent2:#b4440a;--grad-a:#cc4b08;--grad-b:#a83a08;--on-accent:#ffffff;--text:#2a1a12;--muted:#7a655a;--info:#0369a1;--info-bg:#e6f4fb;--info-line:#9ccbe3;--danger:#c2410c;--fin-bg:#fff1e2;--fin-head:#ffe2c4;--fin-line:#f0c9a0;--end-bg:#ffe8cf;--end-line:#f0b98a;--banner-a:#e8590c;--banner-b:#c2410c;--banner-text:#ffffff;--chip-bg:#e6f4fb;--chip-line:#9ccbe3;--chip-text:#0c4a6e;--hover:#fff0e0}
+html{font-size:16px}
+@media (min-width:900px){html{font-size:20px}}
+@media (min-width:1400px){html{font-size:24px}}
+@media (min-width:2200px){html{font-size:30px}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  min-height:100vh; color:var(--text); font-family:'Nunito',system-ui,sans-serif;
+  background:radial-gradient(120% 60% at 50% 0%,var(--glow) 0%,var(--mid) 40%,var(--bg) 100%) fixed;
+}
+.wrap{max-width:35rem;margin:0 auto;padding:1rem 1rem 3rem}
+h1,h2,h3,.oswald{font-family:'Oswald',Impact,sans-serif;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+img.spr{image-rendering:pixelated;object-fit:contain}
+
+/* cabecera */
+.top{position:relative;display:flex;align-items:center;justify-content:space-between;gap:0.625rem;margin-bottom:0.875rem}
+.brand{display:flex;align-items:center;gap:0.625rem}
+.brand .trainer{width:3rem;height:3rem;border-radius:0.75rem;background:var(--card);border:1px solid var(--line);padding:0.125rem}
+.brand h1{font-size:2.125rem;color:var(--accent2);letter-spacing:.5px}
+.actions{display:flex;gap:0.375rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.btn-top{display:inline-flex;align-items:center;gap:0.375rem;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:0.625rem;padding:0.5rem 0.75rem;font-weight:800;font-size:0.875rem;text-decoration:none}
+.btn-top:hover,.btn-top[aria-expanded="true"]{border-color:var(--accent)}
+.btn-top[hidden]{display:none}
+.theme-panel{position:absolute;right:0;top:calc(100% + 0.375rem);z-index:20;width:min(21.25rem,100%);background:var(--card2);border:1px solid var(--line);border-radius:0.875rem;padding:0.625rem;display:grid;grid-template-columns:1fr 1fr;gap:0.375rem;box-shadow:0 0.75rem 1.875rem rgba(0,0,0,.35)}
+.theme-panel[hidden]{display:none}
+.theme-opt{display:flex;align-items:center;gap:0.5rem;background:var(--card);border:1px solid var(--line);border-radius:0.625rem;padding:0.5rem 0.625rem;font-weight:800;font-size:0.875rem;text-align:left}
+.theme-opt:hover{border-color:var(--accent)}
+.theme-opt[aria-pressed="true"]{border-color:var(--accent);background:var(--hover)}
+.theme-opt .sw{flex:none;width:1.375rem;height:1.375rem;border-radius:50%;border:1px solid rgba(128,128,128,.5)}
+
+/* equipo */
+.team{background:var(--card2);border:1px solid var(--line);border-radius:1rem;padding:0.875rem;margin-bottom:0.875rem}
+.team-head{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+.team-head img{width:2.5rem;height:2.5rem}
+.team-head small{display:block;color:var(--accent);font-family:'Oswald';font-size:0.8125rem;letter-spacing:.8px;text-transform:uppercase}
+.team-head b{font-family:'Oswald';font-size:1.375rem}
+.team-icons{display:flex;justify-content:space-between}
+.team-icons span{width:2.875rem;height:2.875rem;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center}
+.team-icons img{width:2.125rem;height:2.125rem}
+.banner{background:linear-gradient(90deg,var(--banner-a),var(--banner-b));border-radius:0.75rem;padding:0.875rem 1rem;font-family:'Oswald';font-size:1.125rem;color:var(--banner-text);margin-bottom:1.125rem}
+
+/* inicio */
+.q-title{font-family:'Oswald';font-size:1.25rem;margin:0.375rem 0 0.75rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(6rem,1fr));gap:0.5rem}
+.mon{background:var(--card);border:1px solid var(--line);border-radius:0.75rem;padding:0.625rem 0.25rem 0.5rem;display:flex;flex-direction:column;align-items:center;gap:0.25rem;font-weight:700;font-size:0.8125rem}
+.mon img{width:4rem;height:4rem}
+.mon:hover,.opt:hover{border-color:var(--accent);background:var(--hover)}
+
+/* pantalla de guía */
+.crumb{color:var(--muted);font-size:0.8125rem;margin:0.5rem 0 0.25rem;word-break:break-word}
+.screen-title{font-size:1.875rem;color:var(--accent2);margin:0.125rem 0 0.875rem;line-height:1.15}
+.note{display:flex;gap:0.625rem;background:var(--info-bg);border:1px solid var(--info-line);border-radius:0.75rem;padding:0.75rem 0.875rem;margin-bottom:0.875rem}
+.note i{font-style:normal;color:var(--info);font-weight:800}
+.note small,.step small{display:block;font-family:'Oswald';font-size:0.6875rem;letter-spacing:.8px;text-transform:uppercase}
+.note small{color:var(--info)}
+.step small{color:var(--accent)}
+.step{display:flex;gap:0.75rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:0.75rem;padding:0.75rem 0.875rem;margin-bottom:0.625rem}
+.step .n{flex:none;width:1.75rem;height:1.75rem;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;display:grid;place-items:center}
+.ask{text-align:center;font-family:'Oswald';text-transform:uppercase;font-size:1.062rem;margin:1.125rem 0 0.625rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+.opt{display:flex;align-items:center;gap:0.625rem;background:var(--card);border:1px solid var(--line);border-radius:0.75rem;padding:0.75rem;font-weight:800;text-align:left;min-height:3.25rem}
+.opt img{width:2.25rem;height:2.25rem;flex:none}
+.cont{width:100%;margin-top:0.375rem;padding:0.875rem;border:0;border-radius:0.75rem;background:linear-gradient(180deg,var(--grad-a),var(--grad-b));color:var(--on-accent);font-weight:800;font-size:1rem}
+.cont:hover{filter:brightness(1.08)}
+.back{margin-top:0.875rem;background:none;border:0;color:var(--muted);font-weight:700;padding:0.375rem 0}
+.back:hover{color:var(--text)}
+
+/* finalizar */
+.finish{background:var(--fin-bg);border:1px solid var(--fin-line);border-radius:0.875rem;overflow:hidden;margin:0.375rem 0 0.875rem}
+.finish h3{font-size:0.875rem;color:var(--danger);text-transform:uppercase;letter-spacing:.6px;padding:0.75rem 0.875rem;background:var(--fin-head)}
+.mv{display:flex;flex-wrap:wrap;gap:0.5rem 0.625rem;align-items:center;padding:0.75rem 0.875rem;border-top:1px solid var(--fin-line)}
+.chip{font-family:ui-monospace,Consolas,monospace;font-size:0.8125rem;color:var(--chip-text);background:var(--chip-bg);border:1px solid var(--chip-line);border-radius:0.375rem;padding:0.1875rem 0.5625rem}
+.mv .arrow{color:var(--muted)}
+.mv .list{display:flex;flex-wrap:wrap;gap:0.125rem 0.5rem;align-items:center}
+.mv .list span{display:inline-flex;align-items:center;font-size:0.875rem}
+.mv .list img{width:1.875rem;height:1.875rem;margin-right:0.125rem}
+.end{background:var(--end-bg);border:1px solid var(--end-line);border-radius:0.875rem;padding:1rem}
+.end h3{display:flex;align-items:center;gap:0.625rem;font-size:1.25rem;margin-bottom:0.75rem}
+.end h3 i{font-style:normal;width:1.875rem;height:1.875rem;border-radius:50%;background:var(--accent2);color:var(--on-accent);display:grid;place-items:center;font-size:1rem}
+.btn-exit{background:var(--card);border:1px solid var(--line);border-radius:0.625rem;padding:0.625rem 1rem;font-weight:800}
+.btn-exit:hover{border-color:var(--accent)}
+@media (max-width:380px){.opts{grid-template-columns:1fr}.theme-panel{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <img class="trainer spr" id="trainer" alt="Red" src="https://play.pokemonshowdown.com/sprites/trainers/red.png">
+      <h1>RED</h1>
+    </div>
+    <div class="actions">
+      <a class="btn-top" id="btnTeam" href="https://pokepast.es/433ccc371e07d52c" target="_blank" rel="noopener noreferrer">Equipo ↗</a>
+      <button class="btn-top" id="btnTheme" type="button" aria-haspopup="true" aria-expanded="false">🎨 Tema</button>
+      <button class="btn-top" id="btnHome" type="button" hidden>⌂ Inicio</button>
+    </div>
+    <div class="theme-panel" id="themePanel" hidden></div>
+  </div>
+  <main id="app"></main>
+</div>
+
+<script>
+/* ============ Sprites (Pokémon Showdown) ============ */
+const SPRITE = id => `https://play.pokemonshowdown.com/sprites/gen5/${id}.png`;
+const sid = name => name.toLowerCase().replace(/[^a-z0-9]/g, '');
+const spr = (name, cls = '') =>
+  `<img class="spr ${cls}" loading="lazy" alt="${name}" src="${SPRITE(sid(name))}" onerror="this.style.visibility='hidden'">`;
+
+/* ============ Datos de la guía (equipo COLORED) ============ */
+const TEAM = ['Blissey', 'Honchkrow', 'Golduck', 'Breloom', 'Gliscor', 'Lapras'];
+
+const LEADS = ['Blastoise', 'Charizard', 'Emboar', 'Espeon', 'Excadrill', 'Gliscor', 'Hydreigon',
+  'Pikachu', 'Samurott', 'Serperior', 'Snorlax', 'Staraptor', 'Swampert', 'Venusaur'];
+
+/* Nodo: title, note, steps[], ask{text, options[{label, mon, to}]}, next (Continuar), finish{title, moves[{move, mons[]}]} */
+const N = {
+  /* ---- Rutas de inicio ---- */
+  Blastoise: { title: 'Blastoise', steps: [' ➜ Blissey, Teletransporte', '➜ Entra Con Honchkrow, Golpe Bajo 2 veces'], next: 'honch2' },
+  Charizard: { title: 'Charizard', steps: [' ➜ Blissey, Teletransporte', 'Entra Con Honchkrow, Proteccion + Golpe Bajo'], next: 'honch2' },
+  Espeon: { title: 'Espeon', steps: [' ➜ Blissey, Teletransporte', ' Entra con Honchkrow , Golpe Bajo'], next: 'honch2' },
+  Venusaur: {
+    title: 'Venusaur',
+    steps: [' Blissey, Teletransporte ', 'Entra Con Honchkrow'],
+    note: 'El movimiento de Honchkrow depende del sol en el campo:',
+    ask: { text: '¿Hay sol en el campo?', options: [
+      { label: 'Sin sol', to: 'venuFirstNo' }, { label: 'Con sol', to: 'venuFirstSun' }] }
+  },
+  venuFirstNo: { title: 'Venusaur (sin sol)', steps: ['Usa Pajaro Osado'], next: 'honch2' },
+  venuFirstSun: { title: 'Venusaur (con sol)', steps: ['Golpe bajo 2 Veces'], next: 'honch2' },
+
+  Excadrill: { title: 'Excadrill', steps: ['Entra Con Honchkrow, Golpe Bajo', 'Entra con Breloom + Ultra Puño'], note: 'Sigue la ruta de Emboar.', next: 'roar' },
+  Hydreigon: { title: 'Hydreigon / Samurott / Serperior', steps: ['Teletransporte'], note: 'Sigue la ruta de Emboar.', next: 'roar' },
+  Samurott: { alias: 'Hydreigon' },
+  Serperior: { alias: 'Hydreigon' },
+
+  Snorlax: {
+    title: 'Snorlax',
+    steps: ['Blissey, Teletransporte', 'Entra Con Breloom y usa Demolición'],
+    ask: { text: '¿Quién entró después?', options: [
+      { label: 'Charizard', mon: 'Charizard', to: 'snorChar' }, { label: 'Otro', to: 'snorOtro' }] }
+  },
+  snorChar: { title: 'Snorlax → Charizard', steps: ['Usa Ultra Puño', 'Entra Con Honchkrow, Golpe Bajo'], next: 'honch2' },
+  snorOtro: { title: 'Snorlax → Otro', steps: ['Sacrifica a Breloom', 'Saca a Honchkrow', 'Golpe Bajo'], next: 'honch2' },
+
+  Pikachu: {
+    title: 'Pikachu',
+    steps: ['Usa Skill Swap en Pikachu (revela la línea)'],
+    ask: { text: '¿Qué línea reveló el Skill Swap? (Gen 1 o Gen 5)', options: [
+      { label: 'Gen 1 (Espeon/Snorlax cerca)', to: 'pika1' }, { label: 'Gen 5 (Emboar cerca)', to: 'pika5' }] }
+  },
+  pika1: {
+    title: 'Pikachu (Gen 1)', note: 'Reacciona al siguiente Pokémon de Red:',
+    ask: { text: '¿Quién entró después?', options: [
+      { label: 'Espeon', mon: 'Espeon', to: 'pikaEsp' }, { label: 'Snorlax', mon: 'Snorlax', to: 'pikaSnor' }] }
+  },
+  pikaEsp: { title: 'Pikachu → Espeon', steps: ['Entra con Honchkrow, Golpe Bajo '], next: 'honch2' },
+  pikaSnor: { title: 'Pikachu → Snorlax', steps: ['Con Blissey, Teletransporte o sacrifícala'], note: 'Sigue la ruta de Snorlax.', next: 'Snorlax' },
+  pika5: { title: 'Pikachu (Gen 5)', steps: ['Usa Teletransporte'], note: 'Sigue la ruta de Emboar.', next: 'roar' },
+
+  Gliscor: {
+    title: 'Gliscor',
+    steps: ['Entra Con Golduck + Otra vez ', 'Entra Con Gliscor', ' Usa 2 Veces Danza Espada', ' +1Pulimiento'],
+    finish: { title: 'Movimiento de Gliscor para finalizar', moves: [
+      { move: 'Acróbata', mons: ['Gliscor', 'Feraligatr', 'Meganium'] },
+      { move: 'Terremoto', mons: ['Typhlosion', 'Pikachu', 'Tyranitar'] }] }
+  },
+  Swampert: {
+    title: 'Swampert',
+    steps: ['Entra Con Golduck + Otra vez', 'Entra Con Gliscor', '+1 Danza Espada', '+1 Pulimiento'],
+    finish: { title: 'Movimiento de Gliscor para finalizar', moves: [
+      { move: 'Acróbata', mons: ['Swampert', 'Blaziken', 'Salamence', 'Sceptile'] },
+      { move: 'Terremoto', mons: ['Metagross', 'Pikachu'] }] }
+  },
+
+  Staraptor: {
+    title: 'Staraptor (Usa Remolino)',
+    note: 'Staraptor usa Remolino y te obliga a cambiar a un Pokémon aleatorio.',
+    ask: { text: '¿A quién mandó al campo el Remolino?', options: [
+      { label: 'Golduck o Lapras', mon: 'Golduck', to: 'starGL' },
+      { label: 'Gliscor, Honchkrow o Breloom', mon: 'Gliscor', to: 'starOtro' }] }
+  },
+  starGL: { title: 'Staraptor · entró Golduck/Lapras', steps: ['Entra con Gliscor ➜ Breloom y Sacrifica a Blissey y Staraptor muere '], next: 'starDown' },
+  starOtro: { title: 'Staraptor · entró otro', steps: ['Saca a Blissey'], next: 'starDown' },
+  starDown: {
+    title: 'Staraptor debilitado → Lapras', note: 'Después de que Staraptor se debilite:',
+    steps: ['Entra Con Lapras', 'Danza Dragon 2 Veces', 'Usa Sustituto'],
+    finish: { title: 'Movimiento de Lapras para finalizar', moves: [
+      { move: 'Carámbano', mons: ['Infernape', 'Pikachu', 'Torterra', 'Garchomp'] },
+      { move: 'Terremoto', mons: ['Empoleon'] }] }
+  },
+
+  /* ---- Nodos compartidos: Emboar (Roar) ---- */
+  roar: {
+    title: 'Emboar (Rugido)', note: 'Emboar usa rugido y te obliga a cambiar a un Pokémon aleatorio.',
+    ask: { text: '¿A quién mandó al campo el Roar?', options: [
+      { label: 'Golduck', mon: 'Golduck', to: 'roarGold' }, { label: 'Lapras', mon: 'Lapras', to: 'roarLap' },
+      { label: 'Cualquier otro', to: 'roarOtro' }] }
+  },
+  roarGold: { title: 'Emboar → Golduck', steps: ['Usa Bostezo', 'Usa Doble Filo'], next: 'breloomEnd' },
+  roarLap: { title: 'Emboar → Lapras', steps: ['+1 Danza Dragon', 'Entra con Golduck, Bostezo + Doble filo'], next: 'breloomEnd' },
+  roarOtro: { title: 'Emboar → Otro', steps: ['Entra Con Lapras', 'Entra Con Golduck, Bostezo + Doble filo'], next: 'breloomEnd' },
+  breloomEnd: {
+    title: 'Finalizar con Breloom', note: 'Después de que Golduck se debilite:',
+    steps: ['Entra con Breloom +1 Danza Espada'],
+    finish: { title: 'Movimiento de Breloom para finalizar', moves: [
+      { move: 'Ultra Puño', mons: ['Emboar', 'Serperior', 'Hydreigon', 'Pikachu', 'Excadrill'] },
+      { move: 'Demolición', mons: ['Samurott'] }] }
+  },
+
+  /* ---- Nodos compartidos: Honchkrow +1 / +2 ---- */
+  honch2: {
+    title: '2º Pokémon de Red (Honchkrow +1)',
+    note: 'Honchkrow +1 ➜ Mira Cual es el siguiente Pokémon de Red:',
+    ask: { text: '¿Cuál es el siguiente Pokémon de Red?', options: [
+      { label: 'Blastoise', mon: 'Blastoise', to: 'hBlast' }, { label: 'Charizard', mon: 'Charizard', to: 'hChar' },
+      { label: 'Venusaur', mon: 'Venusaur', to: 'hVenu' }, { label: 'Otro', to: 'honchEnd' }] }
+  },
+  hBlast: { title: 'Blastoise', steps: ['Usa Golpe Bajo 2 Veces'], next: 'honchEnd' },
+  hChar: { title: 'Charizard', steps: ['Usa Proteccion + Golpe Bajo'], next: 'honchEnd' },
+  hVenu: {
+    title: 'Venusaur', note: 'Depende del sol en el campo:',
+    ask: { text: '¿Hay sol en el campo?', options: [
+      { label: 'Sin sol', to: 'hVenuNo' }, { label: 'Con sol', to: 'hVenuSun' }] }
+  },
+  hVenuNo: { title: 'Venusaur (sin sol)', steps: ['Usa Pajaro Osado'], next: 'honchEnd' },
+  hVenuSun: { title: 'Venusaur (con sol)', steps: ['Usa Golpe Bajo 2 Veces'], next: 'honchEnd' },
+  honchEnd: {
+    title: 'Finalizar (Honchkrow +2)', note: 'Barre el resto del equipo (Honchkrow +2):',
+    finish: { title: 'Elige los movimientos para finalizar', moves: [
+      { move: 'Fuerza Bruta', mons: ['Snorlax'] },
+      { move: 'Golpe Bajo', text: 'todos los demás' }] }
+  }
+};
+/* Emboar entra directo a la pregunta del Roar */
+N.Emboar = { alias: 'roar' };
+const resolve = id => { let n = N[id]; while (n && n.alias) n = N[n.alias]; return n; };
+
+/* ============ Estado y render ============ */
+const app = document.getElementById('app');
+const btnHome = document.getElementById('btnHome');
+let path = [];           // ids visitados (pila)
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function home() {
+  path = []; btnHome.hidden = true;
+  app.innerHTML = `
+    <section class="team">
+      <div class="team-head">${spr(TEAM[0])}<div><small>Equipo actual</small><b>COLORED</b></div></div>
+      <div class="team-icons">${TEAM.map(m => `<span title="${m}">${spr(m)}</span>`).join('')}</div>
+    </section>
+    <div class="banner">⚑ ¡Lidera siempre con Blissey!</div>
+    <h2 class="q-title">¿Con qué lideró Red?</h2>
+    <div class="grid" id="grid">${LEADS.map(n => `<button class="mon" data-lead="${n}">${spr(n)}<span>${n}</span></button>`).join('')}</div>`;
+  document.getElementById('grid').addEventListener('click', e => { const b = e.target.closest('[data-lead]'); if (b) go(b.dataset.lead, true); });
+}
+
+function crumbText() {
+  const titles = path.slice(0, -1).map(id => resolve(id).title);
+  if (!titles.length) return '';
+  return (titles.length > 3 ? ['…', ...titles.slice(-3)] : titles).map(esc).join(' › ');
+}
+
+function go(id, reset) {
+  if (reset) path = [];
+  path.push(id); render();
+}
+
+function render() {
+  const id = path[path.length - 1], n = resolve(id);
+  btnHome.hidden = false;
+  let h = '';
+  const c = crumbText();
+  if (c) h += `<div class="crumb">${c}</div>`;
+  h += `<h2 class="screen-title">${esc(n.title)}</h2>`;
+  if (n.note) h += `<div class="note"><i>ⓘ</i><div><small>Nota</small>${esc(n.note)}</div></div>`;
+  (n.steps || []).forEach((s, i) =>
+    h += `<div class="step"><span class="n">${i + 1}</span><div><small>Paso</small>${esc(s)}</div></div>`);
+  if (n.ask) {
+    h += `<div class="ask">${esc(n.ask.text)}</div><div class="opts">` +
+      n.ask.options.map(o => `<button class="opt" data-to="${o.to}">${o.mon ? spr(o.mon) : ''}<span>${esc(o.label)}</span></button>`).join('') + '</div>';
+  }
+  if (n.finish) {
+    h += `<div class="finish"><h3>⚑ ${esc(n.finish.title)}</h3>` + n.finish.moves.map(m =>
+      `<div class="mv"><span class="chip">${esc(m.move)}</span><span class="arrow">→</span>` +
+      (m.mons ? `<span class="list">${m.mons.map(x => `<span>${spr(x)}${x}</span>`).join('')}</span>` : `<span>${esc(m.text)}</span>`) +
+      '</div>').join('') + '</div>' +
+      `<div class="end"><h3><i>✓</i>FIN DE LA GUÍA</h3><button class="btn-exit" id="exit">Salir de la guía</button></div>`;
+  }
+  if (n.next) h += `<button class="cont" data-to="${n.next}">Continuar</button>`;
+  h += `<button class="back" id="back">← Volver</button>`;
+  app.innerHTML = h;
+  window.scrollTo(0, 0);
+
+  app.querySelectorAll('[data-to]').forEach(b => b.addEventListener('click', () => go(b.dataset.to)));
+  document.getElementById('back').addEventListener('click', () => { path.length > 1 ? (path.pop(), render()) : home(); });
+  const ex = document.getElementById('exit'); if (ex) ex.addEventListener('click', () => home());
+}
+
+
+/* ============ Temas ============ */
+const THEMES = [
+  { id: 'fuego', name: 'Fuego', sw: ['#ff7a1a', '#150b08'] },
+  { id: 'oceano', name: 'Océano', sw: ['#22b8e8', '#06121c'] },
+  { id: 'bosque', name: 'Bosque', sw: ['#4ade80', '#08130b'] },
+  { id: 'noche', name: 'Noche', sw: ['#a78bfa', '#0d0a18'] },
+  { id: 'electrico', name: 'Eléctrico', sw: ['#facc15', '#0c0c08'] },
+  { id: 'rosa', name: 'Rosa', sw: ['#ff7eb6', '#1a0d14'] },
+  { id: 'grafito', name: 'Grafito', sw: ['#2dd4bf', '#0e0f11'] },
+  { id: 'claro', name: 'Claro', sw: ['#e8590c', '#fdf6ef'] }
+];
+const themePanel = document.getElementById('themePanel');
+const btnTheme = document.getElementById('btnTheme');
+function setTheme(id, save) {
+  if (!THEMES.some(t => t.id === id)) id = 'fuego';
+  document.documentElement.setAttribute('data-theme', id);
+  if (save) { try { localStorage.setItem('guiaRedTheme', id); } catch (e) {} }
+  themePanel.querySelectorAll('.theme-opt').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === id)));
+}
+themePanel.innerHTML = THEMES.map(t =>
+  `<button class="theme-opt" type="button" data-theme="${t.id}" aria-pressed="false"><span class="sw" style="background:linear-gradient(135deg,${t.sw[0]} 50%,${t.sw[1]} 50%)"></span>${t.name}</button>`).join('');
+themePanel.addEventListener('click', e => { const b = e.target.closest('[data-theme]'); if (b) setTheme(b.dataset.theme, true); });
+const togglePanel = open => { themePanel.hidden = !open; btnTheme.setAttribute('aria-expanded', String(open)); };
+btnTheme.addEventListener('click', e => { e.stopPropagation(); togglePanel(themePanel.hidden); });
+document.addEventListener('click', e => { if (!themePanel.hidden && !themePanel.contains(e.target)) togglePanel(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') togglePanel(false); });
+let saved = null; try { saved = localStorage.getItem('guiaRedTheme'); } catch (e) {}
+setTheme(saved || 'fuego', false);
+
+btnHome.addEventListener('click', () => home());
+document.getElementById('trainer').addEventListener('error', e => e.target.style.visibility = 'hidden');
+home();
+</script>
+</body>
+</html>
